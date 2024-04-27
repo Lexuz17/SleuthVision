@@ -14,6 +14,9 @@
 		CD7369282BDB6B7A0011A573 /* SleuthVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369272BDB6B7A0011A573 /* SleuthVisionTests.swift */; };
 		CD7369322BDB6B7A0011A573 /* SleuthVisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369312BDB6B7A0011A573 /* SleuthVisionUITests.swift */; };
 		CD7369342BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369332BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift */; };
+		E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */; };
+		E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */; };
+		E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		CD73692D2BDB6B7A0011A573 /* SleuthVisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleuthVisionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7369312BDB6B7A0011A573 /* SleuthVisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleuthVisionUITests.swift; sourceTree = "<group>"; };
 		CD7369332BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleuthVisionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOne.swift; sourceTree = "<group>"; };
+		E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,11 @@
 		CD7369152BDB6B710011A573 /* SleuthVision */ = {
 			isa = PBXGroup;
 			children = (
+				E40E5F312BDBF7BA00EFBF6F /* Testing Code */,
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
 				CD7369182BDB6B710011A573 /* ContentView.swift */,
+				E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */,
+				E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */,
 				CD73691A2BDB6B7A0011A573 /* Assets.xcassets */,
 				CD73691C2BDB6B7A0011A573 /* Preview Content */,
 			);
@@ -125,6 +134,14 @@
 				CD7369332BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift */,
 			);
 			path = SleuthVisionUITests;
+			sourceTree = "<group>";
+		};
+		E40E5F312BDBF7BA00EFBF6F /* Testing Code */ = {
+			isa = PBXGroup;
+			children = (
+				E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */,
+			);
+			path = "Testing Code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +232,8 @@
 				Base,
 			);
 			mainGroup = CD73690A2BDB6B710011A573;
+			packageReferences = (
+			);
 			productRefGroup = CD7369142BDB6B710011A573 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */,
 				CD7369192BDB6B710011A573 /* ContentView.swift in Sources */,
 				CD7369172BDB6B710011A573 /* SleuthVisionApp.swift in Sources */,
+				E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */,
+				E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,8 +450,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +461,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jasonsus.SleuthVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,8 +484,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +495,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jasonsus.SleuthVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

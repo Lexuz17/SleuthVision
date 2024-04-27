@@ -11,7 +11,7 @@ import SwiftUI
 struct SleuthVisionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SwiftUIView()
         }
     }
 }
