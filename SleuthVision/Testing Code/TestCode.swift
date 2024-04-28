@@ -8,66 +8,79 @@
 import SwiftUI
 
 struct TestCode: View {
+	@State private var location: CGPoint = CGPoint(x: 300, y: 200)
+	@GestureState private var fingerTouch: CGPoint? = nil
+	@GestureState private var startTouch: CGPoint? = nil
 	var body: some View {
 		NavigationStack {
-			ZStack {
-				Image("vecteezy_old-brown-paper-texture-background_41271132")
-					.resizable()
-					.ignoresSafeArea()
-				VStack (alignment: .leading) {
-					ScrollView (.horizontal, showsIndicators: false) {
-						HStack {
-							NavigationLink (destination: StoryOne().navigationBarBackButtonHidden(true)) {
-								Image("lab-one")
-									.resizable()
-									.aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-									.frame(width: 250, height: 250, alignment: .center)
-									.clipped()
-									.clipShape(RoundedRectangle(cornerRadius: 25.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-									.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-									.overlay(content: {
-										Image("vecteezy_imagenes-predisenadas-de-lupa-realista_9876398")
-											.resizable()
-											.aspectRatio(contentMode: .fill)
-											.frame(width: 150, height: 150)
-											.offset(y: -90)
-											.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-									})
-									.scrollTransition(topLeading: .interactive, bottomTrailing: .interactive, axis: .horizontal) { effect, phase in effect
-											.scaleEffect(1 - abs(phase.value))
-											.opacity(1 - abs(phase.value))
-											.rotation3DEffect(.degrees(phase.value * 90), axis: (x: 0, y: -1, z: 0))
-								}
-							}
-							ForEach(0 ..< 2) { item in
-								RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-									.frame(width: 250, height: 250)
-									.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-									.overlay(content: {
-										Image("vecteezy_3d-icon-question-mark_22836342")
-											.resizable()
-											.aspectRatio(contentMode: .fill)
-											.frame(width: 150, height: 150)
-											.offset(y: -90)
-											.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-									})
-									.scrollTransition(topLeading: .interactive, bottomTrailing: .interactive, axis: .horizontal) { effect, phase in effect
-											.scaleEffect(1 - abs(phase.value))
-											.opacity(1 - abs(phase.value))
-											.rotation3DEffect(.degrees(phase.value * 90), axis: (x: 0, y: -1, z: 0))
-								}
-							}
-						}
-					}
-					.scrollClipDisabled()
-					.safeAreaPadding(.horizontal, 10)
-					.scrollTargetBehavior(.viewAligned)
-				}
+			OverlayView()
+				.background {
+					Image("floor-plan")
+						.position(location)
+						.gesture(mapDraggable.simultaneously(with: fingerLocation))
 			}
 		}
     }
+	
+	var mapDraggable: some Gesture {
+		DragGesture()
+			.onChanged { value in
+				var newTouch = startTouch ?? location
+				newTouch.x += value.translation.width
+				newTouch.y += value.translation.height
+				self.location = newTouch
+			}
+			.updating($startTouch) { (value, startTouch, transaction) in
+				startTouch = startTouch ?? location
+			}
+	}
+	
+	var fingerLocation: some Gesture {
+		DragGesture()
+			.updating($fingerTouch) { (value, fingerTouch, transaction) in
+				fingerTouch = value.location
+			}
+	}
 }
-
+/*
+struct OverlayView: View {
+	@Environment(\.dismiss) var dismiss
+	var body: some View {
+		VStack {
+			HStack {
+				Button(action: {
+					dismiss()
+				}) {
+					Image(systemName: "chevron.left.circle")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.foregroundStyle(Color("brown-two"))
+						.frame(width: 45, height: 45)
+						.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+						.offset(y: 20)
+						.shadow(radius: 2)
+				}
+				Image("wanted-poster")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.frame(width: 50)
+					.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+					.offset(y: 20)
+					.shadow(radius: 2)
+			}
+			Spacer()
+			HStack {
+				Image("hint-icon")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.frame(width: 70)
+					.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+					.shadow(radius: 2)
+			}
+		}
+	}
+}
+*/
 #Preview {
     TestCode()
 }
