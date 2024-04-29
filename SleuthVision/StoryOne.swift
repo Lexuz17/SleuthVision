@@ -8,37 +8,59 @@
 import SwiftUI
 
 struct StoryOne: View {
+	@State private var isPantryScaled: Bool = false
+	@State private var isCaveScaled: Bool = false
 	@State private var location: CGPoint = CGPoint(x: 300, y: 200)
-	@GestureState private var fingerTouch: CGPoint? = nil
+	@State private var pantryOverlay: CGPoint = CGPoint(x: 350, y: 300)
+	@State private var caveOverlay: CGPoint = CGPoint(x: 820, y: 320)
 	@GestureState private var startTouch: CGPoint? = nil
 	var body: some View {
 		NavigationStack {
 			OverlayView()
 				.background {
-					Image("floor-plan")
-						.position(location)
-						.gesture(mapDraggable.simultaneously(with: fingerLocation))
-			}
+					ZStack {
+						Image("sitemap-brown")
+							.position(location)
+							.gesture(mapGesture)
+						Image("magnifying-glass-alt")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 100)
+							.position(pantryOverlay)
+							.scaleEffect(isPantryScaled ? 1.1 : 1.0)
+							.onAppear {
+								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+									self.isPantryScaled.toggle()
+								}
+							}
+						Image("magnifying-glass-alt")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 100)
+							.position(caveOverlay)
+							.scaleEffect(isCaveScaled ? 1.1 : 1.0)
+							.onAppear {
+								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+									self.isCaveScaled.toggle()
+								}
+							}
+					}
+				}
 		}
 	}
 	
-	var mapDraggable: some Gesture {
+	var mapGesture: some Gesture {
 		DragGesture()
 			.onChanged { value in
 				var newTouch = startTouch ?? location
 				newTouch.x += value.translation.width
 				newTouch.y += value.translation.height
 				self.location = newTouch
+				self.pantryOverlay = CGPoint(x: newTouch.x + 50, y: newTouch.y + 100)
+				self.caveOverlay = CGPoint(x: newTouch.x + 520, y: newTouch.y + 120)
 			}
 			.updating($startTouch) { (value, startTouch, transaction) in
 				startTouch = startTouch ?? location
-			}
-	}
-	
-	var fingerLocation: some Gesture {
-		DragGesture()
-			.updating($fingerTouch) { (value, fingerTouch, transaction) in
-				fingerTouch = value.location
 			}
 	}
 }
@@ -51,14 +73,14 @@ struct OverlayView: View {
 				Button(action: {
 					dismiss()
 				}) {
-					Image(systemName: "chevron.left.circle")
+					Image("NicePng_back-button-png_875973")
 						.resizable()
 						.aspectRatio(contentMode: .fit)
 						.foregroundStyle(Color("brown-two"))
 						.frame(width: 45, height: 45)
 						.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 						.offset(y: 20)
-						.shadow(radius: 2)
+						.shadow(radius: 10)
 				}
 				Image("wanted-poster")
 					.resizable()
@@ -66,16 +88,16 @@ struct OverlayView: View {
 					.frame(width: 50)
 					.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
 					.offset(y: 20)
-					.shadow(radius: 2)
+					.shadow(radius: 10)
 			}
 			Spacer()
 			HStack {
 				Image("hint-icon")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
-					.frame(width: 70)
+					.frame(width: 90)
 					.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
-					.shadow(radius: 2)
+					.shadow(radius: 10)
 			}
 		}
 	}

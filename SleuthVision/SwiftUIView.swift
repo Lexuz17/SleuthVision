@@ -11,8 +11,11 @@ struct SwiftUIView: View {
 	var body: some View {
 		NavigationStack {
 			ZStack {
-				Color("brown-two")
-					.ignoresSafeArea(.all)
+//				Color("brown-two")
+//					.ignoresSafeArea()
+				Image("story-background")
+					.resizable()
+					.ignoresSafeArea()
 				VStack (alignment: .leading) {
 					ScrollView (.horizontal, showsIndicators: false) {
 						HStack {
@@ -25,7 +28,7 @@ struct SwiftUIView: View {
 									.clipShape(RoundedRectangle(cornerRadius: 25.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
 									.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 									.overlay(content: {
-										Image("vecteezy_imagenes-predisenadas-de-lupa-realista_9876398")
+										Image("magnifying-glass-alt")
 											.resizable()
 											.aspectRatio(contentMode: .fill)
 											.frame(width: 150, height: 150)
@@ -38,12 +41,12 @@ struct SwiftUIView: View {
 											.rotation3DEffect(.degrees(phase.value * 90), axis: (x: 0, y: -1, z: 0))
 								}
 							}
-							ForEach(0 ..< 2) { item in
+							ForEach(0 ..< 3) { item in
 								RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
 									.frame(width: 250, height: 250)
 									.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 									.overlay(content: {
-										Image("vecteezy_3d-icon-question-mark_22836342")
+										Image("question-mark")
 											.resizable()
 											.aspectRatio(contentMode: .fill)
 											.frame(width: 150, height: 150)
@@ -63,6 +66,11 @@ struct SwiftUIView: View {
 					.scrollTargetBehavior(.viewAligned)
 				}
 			}
+//			.background {
+//				Image("background-story")
+//					.resizable()
+//					.ignoresSafeArea()
+//			}
 		}
 	}
 }
