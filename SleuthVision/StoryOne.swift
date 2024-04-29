@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StoryOne: View {
+	@State private var isTutorialShown = false
 	@State private var isPantryScaled: Bool = false
 	@State private var isCaveScaled: Bool = false
 	@State private var location: CGPoint = CGPoint(x: 300, y: 200)
@@ -16,7 +17,7 @@ struct StoryOne: View {
 	@GestureState private var startTouch: CGPoint? = nil
 	var body: some View {
 		NavigationStack {
-			OverlayView()
+			OverlayView(showTutorial: $isTutorialShown)
 				.background {
 					ZStack {
 						Image("sitemap-brown")
@@ -46,6 +47,11 @@ struct StoryOne: View {
 							}
 					}
 				}
+				.overlay {
+					if isTutorialShown {
+						showTutorialView()
+					}
+				}
 		}
 	}
 	
@@ -66,43 +72,44 @@ struct StoryOne: View {
 }
 
 struct OverlayView: View {
-	@Environment(\.dismiss) var dismiss
+	@Binding var showTutorial: Bool
 	var body: some View {
 		VStack {
 			HStack {
 				Button(action: {
-					dismiss()
+					self.showTutorial.toggle()
 				}) {
-					Image("back-button-brown")
+					Image("hint-icon")
 						.resizable()
 						.aspectRatio(contentMode: .fit)
-						.foregroundStyle(Color("brown-two"))
-						.frame(width: 100, height: 100)
-						.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-						.offset(y: 20)
+						.frame(width: 90)
+						.offset(x: -20)
 						.shadow(radius: 10)
 				}
-				Image("wanted-poster")
+				.buttonStyle(PlainButtonStyle())
+				Spacer()
+				Image("wanted-poster-alt")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
-					.frame(width: 50)
-					.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
-					.offset(y: 20)
+					.frame(width: 120)
+					.offset(x: 30)
 					.shadow(radius: 10)
 			}
 			Spacer()
-			HStack {
-				Image("hint-icon")
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.frame(width: 90)
-					.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
-					.shadow(radius: 10)
-			}
 		}
 	}
 }
 
+struct showTutorialView: View {
+	var body: some View {
+		VStack {
+			Image("book-tutorial")
+				.resizable()
+				.aspectRatio(contentMode: .fit)
+				.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+		}
+	}
+}
 
 #Preview {
     StoryOne()

@@ -17,6 +17,7 @@
 		E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */; };
 		E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */; };
 		E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */; };
+		E4A76F542BDF631D007FAED5 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A76F532BDF631D007FAED5 /* TutorialPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOne.swift; sourceTree = "<group>"; };
 		E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
+		E4A76F532BDF631D007FAED5 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
 				CD7369182BDB6B710011A573 /* ContentView.swift */,
 				E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */,
+				E4A76F532BDF631D007FAED5 /* TutorialPage.swift */,
 				E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */,
 				CD73691A2BDB6B7A0011A573 /* Assets.xcassets */,
 				CD73691C2BDB6B7A0011A573 /* Preview Content */,
@@ -286,6 +289,7 @@
 			files = (
 				E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */,
 				CD7369192BDB6B710011A573 /* ContentView.swift in Sources */,
+				E4A76F542BDF631D007FAED5 /* TutorialPage.swift in Sources */,
 				CD7369172BDB6B710011A573 /* SleuthVisionApp.swift in Sources */,
 				E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */,
 				E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */,
