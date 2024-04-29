@@ -22,36 +22,28 @@ struct StoryOne: View {
 						Image("sitemap-brown")
 							.position(location)
 							.gesture(mapGesture)
-						ZStack {
-							Image("barrel")
-								.resizable()
-								.aspectRatio(contentMode: .fit)
-								.frame(width: 50)
-								.position(pantryOverlay)
-							Text("0/0")
-								.position(pantryOverlay)
-						}
-						.scaleEffect(isPantryScaled ? 1.1 : 1.0)
-						.onAppear {
-							withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
-								self.isPantryScaled.toggle()
+						Image("magnifying-glass-alt")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 80)
+							.position(pantryOverlay)
+							.scaleEffect(isPantryScaled ? 1.1 : 1.0)
+							.onAppear {
+								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+									self.isPantryScaled.toggle()
+								}
 							}
-						}
-						ZStack {
-							Image("barrel")
-								.resizable()
-								.aspectRatio(contentMode: .fit)
-								.frame(width: 50)
-								.position(caveOverlay)
-							Text("0/0")
-								.position(caveOverlay)
-						}
-						.scaleEffect(isCaveScaled ? 1.1 : 1.0)
-						.onAppear {
-							withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+						Image("magnifying-glass-alt")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 80)
+							.position(caveOverlay)
+							.scaleEffect(isCaveScaled ? 1.1 : 1.0)
+							.onAppear {
+								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
 								self.isCaveScaled.toggle()
+								}
 							}
-						}
 					}
 				}
 		}
