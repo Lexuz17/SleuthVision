@@ -44,6 +44,7 @@ struct SwiftUIView: View {
 							ForEach(0 ..< 3) { item in
 								RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
 									.frame(width: 250, height: 250)
+									.foregroundStyle(Color("brown-two"))
 									.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 									.overlay(content: {
 										Image("question-mark")

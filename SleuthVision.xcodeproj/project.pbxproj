@@ -100,6 +100,7 @@
 		CD7369152BDB6B710011A573 /* SleuthVision */ = {
 			isa = PBXGroup;
 			children = (
+				E4A76F522BDF557A007FAED5 /* Custom Fonts */,
 				E40E5F312BDBF7BA00EFBF6F /* Testing Code */,
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
 				CD7369182BDB6B710011A573 /* ContentView.swift */,
@@ -142,6 +143,13 @@
 				E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */,
 			);
 			path = "Testing Code";
+			sourceTree = "<group>";
+		};
+		E4A76F522BDF557A007FAED5 /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

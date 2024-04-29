@@ -22,28 +22,36 @@ struct StoryOne: View {
 						Image("sitemap-brown")
 							.position(location)
 							.gesture(mapGesture)
-						Image("magnifying-glass-alt")
-							.resizable()
-							.aspectRatio(contentMode: .fit)
-							.frame(width: 100)
-							.position(pantryOverlay)
-							.scaleEffect(isPantryScaled ? 1.1 : 1.0)
-							.onAppear {
-								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
-									self.isPantryScaled.toggle()
-								}
+						ZStack {
+							Image("barrel")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.frame(width: 50)
+								.position(pantryOverlay)
+							Text("0/0")
+								.position(pantryOverlay)
+						}
+						.scaleEffect(isPantryScaled ? 1.1 : 1.0)
+						.onAppear {
+							withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+								self.isPantryScaled.toggle()
 							}
-						Image("magnifying-glass-alt")
-							.resizable()
-							.aspectRatio(contentMode: .fit)
-							.frame(width: 100)
-							.position(caveOverlay)
-							.scaleEffect(isCaveScaled ? 1.1 : 1.0)
-							.onAppear {
-								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
-									self.isCaveScaled.toggle()
-								}
+						}
+						ZStack {
+							Image("barrel")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.frame(width: 50)
+								.position(caveOverlay)
+							Text("0/0")
+								.position(caveOverlay)
+						}
+						.scaleEffect(isCaveScaled ? 1.1 : 1.0)
+						.onAppear {
+							withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+								self.isCaveScaled.toggle()
 							}
+						}
 					}
 				}
 		}
@@ -73,11 +81,11 @@ struct OverlayView: View {
 				Button(action: {
 					dismiss()
 				}) {
-					Image("NicePng_back-button-png_875973")
+					Image("back-button-brown")
 						.resizable()
 						.aspectRatio(contentMode: .fit)
 						.foregroundStyle(Color("brown-two"))
-						.frame(width: 45, height: 45)
+						.frame(width: 100, height: 100)
 						.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 						.offset(y: 20)
 						.shadow(radius: 10)
