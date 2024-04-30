@@ -18,6 +18,7 @@
 		E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */; };
 		E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */; };
 		E4A76F542BDF631D007FAED5 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A76F532BDF631D007FAED5 /* TutorialPage.swift */; };
+		E4A76F562BDFD693007FAED5 /* CulpritPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A76F552BDFD693007FAED5 /* CulpritPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOne.swift; sourceTree = "<group>"; };
 		E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
 		E4A76F532BDF631D007FAED5 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
+		E4A76F552BDFD693007FAED5 /* CulpritPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulpritPage.swift; sourceTree = "<group>"; };
+		E4A76F572BDFDC9E007FAED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 		CD7369152BDB6B710011A573 /* SleuthVision */ = {
 			isa = PBXGroup;
 			children = (
+				E4A76F572BDFDC9E007FAED5 /* Info.plist */,
 				E4A76F522BDF557A007FAED5 /* Custom Fonts */,
 				E40E5F312BDBF7BA00EFBF6F /* Testing Code */,
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
@@ -109,6 +113,7 @@
 				E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */,
 				E4A76F532BDF631D007FAED5 /* TutorialPage.swift */,
 				E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */,
+				E4A76F552BDFD693007FAED5 /* CulpritPage.swift */,
 				CD73691A2BDB6B7A0011A573 /* Assets.xcassets */,
 				CD73691C2BDB6B7A0011A573 /* Preview Content */,
 			);
@@ -293,6 +298,7 @@
 				CD7369172BDB6B710011A573 /* SleuthVisionApp.swift in Sources */,
 				E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */,
 				E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */,
+				E4A76F562BDFD693007FAED5 /* CulpritPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,9 +465,9 @@
 				DEVELOPMENT_TEAM = M73B4W9D68;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SleuthVision/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -493,9 +499,9 @@
 				DEVELOPMENT_TEAM = M73B4W9D68;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SleuthVision/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -21,7 +21,7 @@ struct TutorialPage: View {
 							.aspectRatio(contentMode: .fit)
 							.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 					}
-					Image("touch-icon")
+					Image("tap-gesture")
 						.resizable()
 						.aspectRatio(contentMode: .fit)
 						.frame(width: 100)

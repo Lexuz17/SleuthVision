@@ -30,7 +30,7 @@ struct StoryOne: View {
 							.position(pantryOverlay)
 							.scaleEffect(isPantryScaled ? 1.1 : 1.0)
 							.onAppear {
-								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+								withAnimation(.easeInOut(duration: 0.8).repeatForever()) {
 									self.isPantryScaled.toggle()
 								}
 							}
@@ -41,7 +41,7 @@ struct StoryOne: View {
 							.position(caveOverlay)
 							.scaleEffect(isCaveScaled ? 1.1 : 1.0)
 							.onAppear {
-								withAnimation(.easeInOut(duration: 1.0).repeatForever()) {
+								withAnimation(.easeInOut(duration: 0.8).repeatForever()) {
 								self.isCaveScaled.toggle()
 								}
 							}
@@ -76,24 +76,24 @@ struct OverlayView: View {
 	var body: some View {
 		VStack {
 			HStack {
-				Button(action: {
-					self.showTutorial.toggle()
-				}) {
-					Image("hint-icon")
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-						.frame(width: 90)
-						.offset(x: -20)
-						.shadow(radius: 10)
-				}
-				.buttonStyle(PlainButtonStyle())
-				Spacer()
-				Image("wanted-poster-alt")
+				Image("hint-icon")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
-					.frame(width: 120)
-					.offset(x: 30)
+					.frame(width: 90)
+					.offset(x: -20)
 					.shadow(radius: 10)
+					.onTapGesture {
+						self.showTutorial.toggle()
+					}
+				Spacer()
+				NavigationLink (destination: CulpritPage().navigationBarBackButtonHidden(true)) {
+					Image("wanted-poster-alt")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 120)
+						.offset(x: 30)
+					.shadow(radius: 10)
+				}
 			}
 			Spacer()
 		}
