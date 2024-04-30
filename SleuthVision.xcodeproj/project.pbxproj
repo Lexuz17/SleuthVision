@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99FA14B62BE098D600E81761 /* ObjectPredictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14972BE098D400E81761 /* ObjectPredictor.mlmodel */; };
+		99FA14B72BE098D600E81761 /* ImageRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14992BE098D400E81761 /* ImageRecognizer.swift */; };
+		99FA14B82BE098D600E81761 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA149A2BE098D400E81761 /* Game.swift */; };
+		99FA14B92BE098D600E81761 /* GameSceneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA149B2BE098D400E81761 /* GameSceneVM.swift */; };
+		99FA14BA2BE098D600E81761 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA149C2BE098D400E81761 /* ImagePredictor.swift */; };
+		99FA14BB2BE098D600E81761 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA149D2BE098D400E81761 /* Prediction.swift */; };
+		99FA14BD2BE098D600E81761 /* VideoDetectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A02BE098D400E81761 /* VideoDetectorController.swift */; };
+		99FA14BE2BE098D600E81761 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A12BE098D400E81761 /* ImagePicker.swift */; };
+		99FA14BF2BE098D600E81761 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A22BE098D400E81761 /* CameraViewController.swift */; };
+		99FA14C02BE098D600E81761 /* VideoDetectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A32BE098D400E81761 /* VideoDetectorExtension.swift */; };
+		99FA14C12BE098D600E81761 /* CameraViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A42BE098D400E81761 /* CameraViewExtension.swift */; };
+		99FA14C22BE098D600E81761 /* VideoDetectorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A52BE098D400E81761 /* VideoDetectorCoordinator.swift */; };
+		99FA14C32BE098D600E81761 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A62BE098D400E81761 /* MobileNet.mlmodel */; };
+		99FA14C42BE098D600E81761 /* ObjectPredictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A82BE098D400E81761 /* ObjectPredictView.swift */; };
+		99FA14C52BE098D600E81761 /* CulpritCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14A92BE098D400E81761 /* CulpritCaptureView.swift */; };
+		99FA14C62BE098D600E81761 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14AA2BE098D400E81761 /* ChallengeView.swift */; };
+		99FA14C72BE098D600E81761 /* RectangleHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14AC2BE098D400E81761 /* RectangleHint.swift */; };
+		99FA14C82BE098D600E81761 /* ObjectScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14AD2BE098D400E81761 /* ObjectScanView.swift */; };
+		99FA14C92BE098D600E81761 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14AE2BE098D400E81761 /* Button.swift */; };
+		99FA14CA2BE098D600E81761 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14AF2BE098D400E81761 /* CameraView.swift */; };
+		99FA14CB2BE098D600E81761 /* VideoDetectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14B02BE098D400E81761 /* VideoDetectorView.swift */; };
+		99FA14CC2BE098D600E81761 /* ObjectCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14B12BE098D400E81761 /* ObjectCaptureView.swift */; };
+		99FA14CD2BE098D600E81761 /* ObjectScanView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14B22BE098D400E81761 /* ObjectScanView2.swift */; };
+		99FA14CE2BE098D600E81761 /* MysteryObjectPrediction.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14B32BE098D400E81761 /* MysteryObjectPrediction.mlmodel */; };
+		99FA14CF2BE098D600E81761 /* CulpritClass.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14B42BE098D500E81761 /* CulpritClass.mlmodel */; };
+		99FA14D02BE098D600E81761 /* yolov9c.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14B52BE098D600E81761 /* yolov9c.mlpackage */; };
+		99FA14D22BE0994500E81761 /* GameInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FA14D12BE0994500E81761 /* GameInstance.swift */; };
 		CD7369172BDB6B710011A573 /* SleuthVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */; };
 		CD7369192BDB6B710011A573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369182BDB6B710011A573 /* ContentView.swift */; };
 		CD73691B2BDB6B7A0011A573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD73691A2BDB6B7A0011A573 /* Assets.xcassets */; };
@@ -39,6 +66,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99FA14972BE098D400E81761 /* ObjectPredictor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectPredictor.mlmodel; sourceTree = "<group>"; };
+		99FA14992BE098D400E81761 /* ImageRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRecognizer.swift; sourceTree = "<group>"; };
+		99FA149A2BE098D400E81761 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		99FA149B2BE098D400E81761 /* GameSceneVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneVM.swift; sourceTree = "<group>"; };
+		99FA149C2BE098D400E81761 /* ImagePredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
+		99FA149D2BE098D400E81761 /* Prediction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		99FA14A02BE098D400E81761 /* VideoDetectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetectorController.swift; sourceTree = "<group>"; };
+		99FA14A12BE098D400E81761 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		99FA14A22BE098D400E81761 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		99FA14A32BE098D400E81761 /* VideoDetectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetectorExtension.swift; sourceTree = "<group>"; };
+		99FA14A42BE098D400E81761 /* CameraViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewExtension.swift; sourceTree = "<group>"; };
+		99FA14A52BE098D400E81761 /* VideoDetectorCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetectorCoordinator.swift; sourceTree = "<group>"; };
+		99FA14A62BE098D400E81761 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		99FA14A82BE098D400E81761 /* ObjectPredictView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectPredictView.swift; sourceTree = "<group>"; };
+		99FA14A92BE098D400E81761 /* CulpritCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CulpritCaptureView.swift; sourceTree = "<group>"; };
+		99FA14AA2BE098D400E81761 /* ChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		99FA14AC2BE098D400E81761 /* RectangleHint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleHint.swift; sourceTree = "<group>"; };
+		99FA14AD2BE098D400E81761 /* ObjectScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectScanView.swift; sourceTree = "<group>"; };
+		99FA14AE2BE098D400E81761 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		99FA14AF2BE098D400E81761 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		99FA14B02BE098D400E81761 /* VideoDetectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetectorView.swift; sourceTree = "<group>"; };
+		99FA14B12BE098D400E81761 /* ObjectCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectCaptureView.swift; sourceTree = "<group>"; };
+		99FA14B22BE098D400E81761 /* ObjectScanView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectScanView2.swift; sourceTree = "<group>"; };
+		99FA14B32BE098D400E81761 /* MysteryObjectPrediction.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MysteryObjectPrediction.mlmodel; sourceTree = "<group>"; };
+		99FA14B42BE098D500E81761 /* CulpritClass.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CulpritClass.mlmodel; sourceTree = "<group>"; };
+		99FA14B52BE098D600E81761 /* yolov9c.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = yolov9c.mlpackage; sourceTree = "<group>"; };
+		99FA14D12BE0994500E81761 /* GameInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInstance.swift; sourceTree = "<group>"; };
 		CD7369132BDB6B710011A573 /* SleuthVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleuthVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleuthVisionApp.swift; sourceTree = "<group>"; };
 		CD7369182BDB6B710011A573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +136,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99FA14982BE098D400E81761 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99FA14992BE098D400E81761 /* ImageRecognizer.swift */,
+				99FA149A2BE098D400E81761 /* Game.swift */,
+				99FA149B2BE098D400E81761 /* GameSceneVM.swift */,
+				99FA149C2BE098D400E81761 /* ImagePredictor.swift */,
+				99FA149D2BE098D400E81761 /* Prediction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99FA149F2BE098D400E81761 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				99FA14A02BE098D400E81761 /* VideoDetectorController.swift */,
+				99FA14A12BE098D400E81761 /* ImagePicker.swift */,
+				99FA14A22BE098D400E81761 /* CameraViewController.swift */,
+				99FA14A32BE098D400E81761 /* VideoDetectorExtension.swift */,
+				99FA14A42BE098D400E81761 /* CameraViewExtension.swift */,
+				99FA14A52BE098D400E81761 /* VideoDetectorCoordinator.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		99FA14A72BE098D400E81761 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99FA14A82BE098D400E81761 /* ObjectPredictView.swift */,
+				99FA14A92BE098D400E81761 /* CulpritCaptureView.swift */,
+				99FA14AA2BE098D400E81761 /* ChallengeView.swift */,
+				99FA14AB2BE098D400E81761 /* Component */,
+				99FA14AF2BE098D400E81761 /* CameraView.swift */,
+				99FA14B02BE098D400E81761 /* VideoDetectorView.swift */,
+				99FA14B12BE098D400E81761 /* ObjectCaptureView.swift */,
+				99FA14B22BE098D400E81761 /* ObjectScanView2.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99FA14AB2BE098D400E81761 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				99FA14AC2BE098D400E81761 /* RectangleHint.swift */,
+				99FA14AD2BE098D400E81761 /* ObjectScanView.swift */,
+				99FA14AE2BE098D400E81761 /* Button.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		CD73690A2BDB6B710011A573 = {
 			isa = PBXGroup;
 			children = (
@@ -106,14 +210,22 @@
 			isa = PBXGroup;
 			children = (
 				E4A76F572BDFDC9E007FAED5 /* Info.plist */,
-				E4A76F522BDF557A007FAED5 /* Custom Fonts */,
 				E40E5F312BDBF7BA00EFBF6F /* Testing Code */,
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
 				CD7369182BDB6B710011A573 /* ContentView.swift */,
+				99FA14D12BE0994500E81761 /* GameInstance.swift */,
 				E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */,
 				E4A76F532BDF631D007FAED5 /* TutorialPage.swift */,
 				E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */,
 				E4A76F552BDFD693007FAED5 /* CulpritPage.swift */,
+				99FA149F2BE098D400E81761 /* Controller */,
+				99FA14B42BE098D500E81761 /* CulpritClass.mlmodel */,
+				99FA14A62BE098D400E81761 /* MobileNet.mlmodel */,
+				99FA14982BE098D400E81761 /* Model */,
+				99FA14B32BE098D400E81761 /* MysteryObjectPrediction.mlmodel */,
+				99FA14972BE098D400E81761 /* ObjectPredictor.mlmodel */,
+				99FA14A72BE098D400E81761 /* View */,
+				99FA14B52BE098D600E81761 /* yolov9c.mlpackage */,
 				CD73691A2BDB6B7A0011A573 /* Assets.xcassets */,
 				CD73691C2BDB6B7A0011A573 /* Preview Content */,
 			);
@@ -151,13 +263,6 @@
 				E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */,
 			);
 			path = "Testing Code";
-			sourceTree = "<group>";
-		};
-		E4A76F522BDF557A007FAED5 /* Custom Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +398,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */,
+				99FA14B82BE098D600E81761 /* Game.swift in Sources */,
+				99FA14CF2BE098D600E81761 /* CulpritClass.mlmodel in Sources */,
+				99FA14BF2BE098D600E81761 /* CameraViewController.swift in Sources */,
 				CD7369192BDB6B710011A573 /* ContentView.swift in Sources */,
+				99FA14BD2BE098D600E81761 /* VideoDetectorController.swift in Sources */,
+				99FA14C82BE098D600E81761 /* ObjectScanView.swift in Sources */,
+				99FA14C22BE098D600E81761 /* VideoDetectorCoordinator.swift in Sources */,
+				99FA14B62BE098D600E81761 /* ObjectPredictor.mlmodel in Sources */,
+				99FA14C52BE098D600E81761 /* CulpritCaptureView.swift in Sources */,
+				99FA14C12BE098D600E81761 /* CameraViewExtension.swift in Sources */,
 				E4A76F542BDF631D007FAED5 /* TutorialPage.swift in Sources */,
 				CD7369172BDB6B710011A573 /* SleuthVisionApp.swift in Sources */,
+				99FA14C32BE098D600E81761 /* MobileNet.mlmodel in Sources */,
+				99FA14C02BE098D600E81761 /* VideoDetectorExtension.swift in Sources */,
+				99FA14CA2BE098D600E81761 /* CameraView.swift in Sources */,
+				99FA14B72BE098D600E81761 /* ImageRecognizer.swift in Sources */,
+				99FA14C92BE098D600E81761 /* Button.swift in Sources */,
 				E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */,
+				99FA14CB2BE098D600E81761 /* VideoDetectorView.swift in Sources */,
+				99FA14D02BE098D600E81761 /* yolov9c.mlpackage in Sources */,
+				99FA14B92BE098D600E81761 /* GameSceneVM.swift in Sources */,
 				E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */,
+				99FA14BA2BE098D600E81761 /* ImagePredictor.swift in Sources */,
+				99FA14BE2BE098D600E81761 /* ImagePicker.swift in Sources */,
+				99FA14CD2BE098D600E81761 /* ObjectScanView2.swift in Sources */,
+				99FA14C62BE098D600E81761 /* ChallengeView.swift in Sources */,
+				99FA14C72BE098D600E81761 /* RectangleHint.swift in Sources */,
+				99FA14CC2BE098D600E81761 /* ObjectCaptureView.swift in Sources */,
+				99FA14D22BE0994500E81761 /* GameInstance.swift in Sources */,
+				99FA14CE2BE098D600E81761 /* MysteryObjectPrediction.mlmodel in Sources */,
+				99FA14C42BE098D600E81761 /* ObjectPredictView.swift in Sources */,
+				99FA14BB2BE098D600E81761 /* Prediction.swift in Sources */,
 				E4A76F562BDFD693007FAED5 /* CulpritPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,10 +594,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SleuthVision/Preview Content\"";
-				DEVELOPMENT_TEAM = M73B4W9D68;
+				DEVELOPMENT_TEAM = 5V847CY3JM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SleuthVision/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
@@ -496,10 +629,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SleuthVision/Preview Content\"";
-				DEVELOPMENT_TEAM = M73B4W9D68;
+				DEVELOPMENT_TEAM = 5V847CY3JM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SleuthVision/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
