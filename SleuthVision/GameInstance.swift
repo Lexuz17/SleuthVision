@@ -20,21 +20,21 @@ let scenes = [
 ]
 
 let challenges = [
-    Challenge(id: LocationId.CaveRoom.rawValue, location: caveRoom, items: caveRoomItems),
-    Challenge(id: LocationId.CaveRoom.rawValue, location: pantry, items: pantryItems)
+    Challenge(id: LocationId.CaveRoom.rawValue, location: pantry, items: pantryItems, isDone: false),
+    Challenge(id: LocationId.Pantry.rawValue, location: caveRoom, items: caveRoomItems, isDone: false),
 ]
 
-let caveRoom = Location(id: 0, name: "Cave Room", isDone: false)
+let caveRoom = Location(id: 0, name: "Cave Room")
 var caveRoomItems = [
     Item(label: "person", hints: ["🧑🏻‍💻","🧍🏻","👓"], _class: "rizkuy", isDone: false),
     Item(label: "laptop", hints: ["🟨", "🙂"], _class: "smilyOnPostkit", isDone: false),
 ]
 
-let pantry = Location(id: 1, name: "Pantry", isDone: false)
+let pantry = Location(id: 1, name: "Pantry")
 var pantryItems = [
     Item(label: "cup", hints: ["⚙️", "☕️"], _class: "coffeeMachine", isDone: false),
-    Item(label: "spoon", hints: ["🥇"], _class: "goldenSpoon", isDone: false),
-    Item(label: "apple", hints: ["⌚️", "🟦"], _class: "appleWatch", isDone: false)
+    Item(label: "spoon", hints: ["🥇"], _class: "goldenSpoon", isDone: true),
+    Item(label: "apple", hints: ["⌚️", "🟦"], _class: "appleWatch", isDone: true)
 ]
 
 let culprit = Culprit(uuid: "cff3e5c5-057d-11ef-86d3-0242ac120002")

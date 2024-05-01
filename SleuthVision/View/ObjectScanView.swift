@@ -15,7 +15,6 @@ struct ObjectScanView: View {
     @StateObject var challengeOb = ChallengeObservable()
     @State var showImagePredictionView = false
     @State var _class = ""
-    var room: String
     
     var body: some View {
         ZStack() { // Align content to the top-left corner
@@ -28,7 +27,7 @@ struct ObjectScanView: View {
 						dismiss()
 					}
                     .navigationDestination(isPresented: $showImagePredictionView) {
-                        ObjectCaptureView(_class: _class, room: room)
+                        ObjectCaptureView(_class: _class)
                             .navigationBarBackButtonHidden(true)
                     }
 					Spacer()

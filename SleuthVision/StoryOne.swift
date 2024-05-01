@@ -8,27 +8,32 @@
 import SwiftUI
 
 struct LocationPoint: View {
+    @StateObject var gsvm = GameSceneVM(gameId: 0)
+    
     @State var isScaled: Bool = false
     @Binding var locOverlay: CGPoint
     
+    var challengeId : Int
     var body: some View {
-        Image("magnifying-glass-alt")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 80)
-            .position(locOverlay)
-            .scaleEffect(isScaled ? 1.1 : 1.0)
-            .onAppear {
-                withAnimation(.easeInOut(duration: 0.8).repeatForever()) {
-                    self.isScaled.toggle()
-                }
+        if let challenge = gsvm.selectedGame.challenges.first(where: { $0.id == challengeId }){
+            if challenge.isDone == false{
+                Image("magnifying-glass-alt")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80)
+                    .position(locOverlay)
+                    .scaleEffect(isScaled ? 1.1 : 1.0)
+                    .onAppear {
+                        withAnimation(.easeInOut(duration: 0.8).repeatForever()) {
+                            self.isScaled.toggle()
+                        }
+                    }
             }
+        }
     }
 }
 
 struct StoryOne: View {
-    @StateObject var gsvm = GameSceneVM(gameId: 0)
-    
     @State private var isTutorialShown: Bool = true
     
     @State private var location: CGPoint = CGPoint(x: 300, y: 200)
@@ -50,25 +55,28 @@ struct StoryOne: View {
                         Image("sitemap-brown")
                             .position(location)
                             .gesture(mapGesture)
-                            .overlay {
-                                if isTutorialShown {
-                                    Color.black.opacity(0.7).ignoresSafeArea()
-                                }
-                            }
-                        LocationPoint(locOverlay: $pantryOverlay)
+                        
+                        // Pantry
+                        LocationPoint(locOverlay: $pantryOverlay, challengeId: 0)
                             .onTapGesture {
                                 pantryIsClick = true
                             }
                             .navigationDestination(isPresented: $pantryIsClick) {
-                                ObjectScanView(challenge: LocationId.Pantry.rawValue, room: "pantry").navigationBarBackButtonHidden(true)
+                                ObjectScanView(challenge: LocationId.Pantry.rawValue).navigationBarBackButtonHidden(true)
                             }
                         
-                        LocationPoint(locOverlay: $caveOverlay)
+                        // CaveRoom
+                        LocationPoint(locOverlay: $caveOverlay, challengeId: 1)
                             .onTapGesture {
                                 caveIsClick = true
                             }
                             .navigationDestination(isPresented: $caveIsClick) {
-                                ObjectScanView(challenge: LocationId.CaveRoom.rawValue, room: "cave").navigationBarBackButtonHidden(true)
+                                ObjectScanView(challenge: LocationId.CaveRoom.rawValue).navigationBarBackButtonHidden(true)
+                            }
+                            .overlay {
+                                if isTutorialShown {
+                                    Color.black.opacity(0.7).ignoresSafeArea()
+                                }
                             }
                         
                         //                        Image("magnifying-glass-alt")

@@ -58,7 +58,7 @@ class Game {
         }
         printAllItems()
     }
-
+    
     func printAllItems() {
         for challenge in challenges {
             print("Challenge Location: \(challenge.location.name)")
@@ -68,6 +68,28 @@ class Game {
             print("------")
         }
     }
+    
+    func UpdateChallenges() {
+        for index in challenges.indices {
+            let challenge = challenges[index]
+            var allItemsDone = true
+            
+            for item in challenge.items {
+                if !item.isDone {
+                    allItemsDone = false
+                    break
+                }
+            }
+            challenges[index].isDone = allItemsDone
+        }
+    }
+    
+    func printAllChallenges() {
+        print("All Challenges:")
+        for challenge in challenges {
+            print("ID: \(challenge.id), Location: \(challenge.location.name), isDone: \(challenge.isDone)")
+        }
+    }
 }
 
 struct Challenge : Identifiable, Hashable {
@@ -75,6 +97,7 @@ struct Challenge : Identifiable, Hashable {
     
     let location : Location
     var items : [Item]
+    var isDone : Bool
     
     static func == (lhs: Challenge, rhs: Challenge) -> Bool {
         lhs.id == rhs.id
@@ -99,7 +122,6 @@ struct Item {
 struct Location{
     let id : Int
     let name : String
-    var isDone: Bool
 }
 
 struct Story {
@@ -108,7 +130,7 @@ struct Story {
 }
 
 struct Culprit {
-//    let image : String
+    //    let image : String
     let uuid : String
 }
 

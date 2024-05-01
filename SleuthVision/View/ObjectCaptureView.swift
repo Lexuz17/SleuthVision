@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ObjectCaptureView: View {
 	var _class : String
-    let room: String
     @Environment(\.dismiss) var dismiss
 	@StateObject private var coordinator: BridgingCoordinator
     @StateObject var gsvm = GameSceneVM(gameId: 0)
@@ -18,11 +17,10 @@ struct ObjectCaptureView: View {
 	
 	private var captureButtonImage: String = "magnifying-glass-alt"
 	
-    init(_class : String, room: String) {
+    init(_class : String){
 		let coordinator = BridgingCoordinator()
 		self._coordinator = StateObject(wrappedValue: coordinator)
 		self._class = _class
-        self.room = room
 	}
 	
 	var body: some View {
@@ -38,6 +36,8 @@ struct ObjectCaptureView: View {
 								
 								if firstPrediction.classification == _class {
                                     gsvm.selectedGame.updateItemStatus(itemFound: _class, isFound: true)
+                                    gsvm.selectedGame.UpdateChallenges()
+                                    gsvm.selectedGame.printAllChallenges()
 									self.predictionState = .correct
 								} else {
 									self.predictionState = .wrong
