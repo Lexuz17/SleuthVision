@@ -14,6 +14,8 @@ struct ObjectCaptureView: View {
 	@State private var capturedImage: UIImage?
 	@State private var predictionState : PredictionState = .notCaptured
 	
+	private var captureButtonImage: String = "magnifying-glass-alt"
+	
 	init(_class : String) {
 		let coordinator = BridgingCoordinator()
 		self._coordinator = StateObject(wrappedValue: coordinator)
@@ -47,13 +49,23 @@ struct ObjectCaptureView: View {
 			
 			switch predictionState {
 			case .notCaptured:
-				Text("Wait for capture image")
+				Text("")
 			case .processed:
-				Text("Still processing")
+				Text("")
 			case .correct:
-				Text("Correct")
+				Image(systemName: "checkmark.circle")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.frame(width: 200)
+					.foregroundStyle(Color.green)
+					.offset(x: 25, y: -10)
 			case .wrong:
-				Text("Wrong")
+				Image(systemName: "x.circle")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.frame(width: 200)
+					.foregroundStyle(Color.red)
+					.offset(x: 25, y: -10)
 			}
 			Image("object-capture")
 				.resizable()
@@ -67,11 +79,11 @@ struct ObjectCaptureView: View {
 					Spacer()
 				}
 				Spacer()
-				CaptureButtonView {
+				CaptureButtonView(buttonImage: captureButtonImage) {
 					coordinator.vc.takePicture()
 					predictionState = .processed
 				}
-				.offset(x: 25)
+				.offset(x: 20)
 			}
 		}
 	}

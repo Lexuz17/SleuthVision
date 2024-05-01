@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct CaptureButtonView: View {
+	
+	var buttonImage: String
+	
     var action: () -> Void
     
     var body: some View {
-        ButtonView(width: 120, image: "magnifying-glass-alt") {
+        ButtonView(width: 120, image: buttonImage) {
          action()
         }
     }

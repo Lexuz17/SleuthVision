@@ -14,6 +14,8 @@ struct RectangleHints: View {
     
     @Binding var _classBind : String
     @Binding var showImagePredict : Bool
+	
+	var captureButtonImage: String = "magnifying-glass-alt"
     
     var body: some View {
         HStack {
@@ -25,7 +27,7 @@ struct RectangleHints: View {
                 }
             }
             
-            CaptureButtonView {
+			CaptureButtonView(buttonImage: captureButtonImage) {
                 isButtonClicked.toggle()
                 showImagePredict.toggle()
                 if let itemLbl = itemLabel, let _class = game0.itemDictionary[itemLbl]?._class {
