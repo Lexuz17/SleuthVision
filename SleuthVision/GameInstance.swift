@@ -24,17 +24,17 @@ let challenges = [
     Challenge(id: LocationId.CaveRoom.rawValue, location: pantry, items: pantryItems)
 ]
 
-let caveRoom = Location(id: 0, name: "Cave Room")
-let caveRoomItems = [
-    Item(label: "person", hints: ["🧑🏻‍💻","🧍🏻","👓"], _class: "rizkuy"),
-    Item(label: "laptop", hints: ["🟨", "🙂", ""], _class: "smilyOnPostkit"),
+let caveRoom = Location(id: 0, name: "Cave Room", isDone: false)
+var caveRoomItems = [
+    Item(label: "person", hints: ["🧑🏻‍💻","🧍🏻","👓"], _class: "rizkuy", isDone: false),
+    Item(label: "laptop", hints: ["🟨", "🙂"], _class: "smilyOnPostkit", isDone: false),
 ]
 
-let pantry = Location(id: 1, name: "Pantry")
-let pantryItems = [
-    Item(label: "cup", hints: ["⚙️", "☕️", ""], _class: "coffeeMachine"),
-    Item(label: "spoon", hints: ["🥇", "", ""], _class: "goldenSpoon"),
-    Item(label: "apple", hints: ["⌚️", "🟦", ""], _class: "appleWatch")
+let pantry = Location(id: 1, name: "Pantry", isDone: false)
+var pantryItems = [
+    Item(label: "cup", hints: ["⚙️", "☕️"], _class: "coffeeMachine", isDone: false),
+    Item(label: "spoon", hints: ["🥇"], _class: "goldenSpoon", isDone: false),
+    Item(label: "apple", hints: ["⌚️", "🟦"], _class: "appleWatch", isDone: false)
 ]
 
 let culprit = Culprit(uuid: "cff3e5c5-057d-11ef-86d3-0242ac120002")

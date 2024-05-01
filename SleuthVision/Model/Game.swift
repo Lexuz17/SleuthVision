@@ -11,7 +11,7 @@ class Game {
     let id : Int
     let title : String
     let story : [Story]
-    let challenges : [Challenge]
+    var challenges : [Challenge]
     let culprit : Culprit
     var itemDictionary : [String: Item] = [:]
     
@@ -37,13 +37,36 @@ class Game {
             // Check if the challenge location's UUID matches
             if challenge.location.id == locationId {
                 for item in challenge.items {
-                    itemList.append(item.label)
+                    if !item.isDone{
+                        itemList.append(item.label)
+                    }
                 }
                 break; // Exit the outer loop once we find a match
             }
         }
-        
         return itemList
+    }
+    
+    func updateItemStatus(itemFound: String, isFound: Bool) {
+        for chalIndex in challenges.indices {
+            for itemIndex in challenges[chalIndex].items.indices {
+                if challenges[chalIndex].items[itemIndex]._class == itemFound {
+                    challenges[chalIndex].items[itemIndex].isDone = isFound
+                    print("nama: \(itemFound), status: \(isFound)")
+                }
+            }
+        }
+        printAllItems()
+    }
+
+    func printAllItems() {
+        for challenge in challenges {
+            print("Challenge Location: \(challenge.location.name)")
+            for item in challenge.items {
+                print("Item: \(item.label), Class: \(item._class), Status: \(item.isDone)")
+            }
+            print("------")
+        }
     }
 }
 
@@ -51,7 +74,7 @@ struct Challenge : Identifiable, Hashable {
     var id: Int
     
     let location : Location
-    let items : [Item]
+    var items : [Item]
     
     static func == (lhs: Challenge, rhs: Challenge) -> Bool {
         lhs.id == rhs.id
@@ -66,6 +89,7 @@ struct Item {
     let label : String
     let hints : [String]
     let _class : String
+    var isDone: Bool
 }
 
 //struct Hint {
@@ -75,6 +99,7 @@ struct Item {
 struct Location{
     let id : Int
     let name : String
+    var isDone: Bool
 }
 
 struct Story {

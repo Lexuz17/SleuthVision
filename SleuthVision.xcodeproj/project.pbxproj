@@ -41,6 +41,10 @@
 		CD7369282BDB6B7A0011A573 /* SleuthVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369272BDB6B7A0011A573 /* SleuthVisionTests.swift */; };
 		CD7369322BDB6B7A0011A573 /* SleuthVisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369312BDB6B7A0011A573 /* SleuthVisionUITests.swift */; };
 		CD7369342BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7369332BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift */; };
+		CDD3E1192BE29A5D00C7FC93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3E1182BE29A5D00C7FC93 /* AppDelegate.swift */; };
+		CDD3E11B2BE29A7300C7FC93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3E11A2BE29A7300C7FC93 /* SceneDelegate.swift */; };
+		CDD3E11D2BE29BFA00C7FC93 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3E11C2BE29BFA00C7FC93 /* Player.swift */; };
+		CDD3E11F2BE29C0700C7FC93 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3E11E2BE29C0700C7FC93 /* PlayerManager.swift */; };
 		E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */; };
 		E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */; };
 		E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */; };
@@ -103,6 +107,10 @@
 		CD73692D2BDB6B7A0011A573 /* SleuthVisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleuthVisionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7369312BDB6B7A0011A573 /* SleuthVisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleuthVisionUITests.swift; sourceTree = "<group>"; };
 		CD7369332BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleuthVisionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDD3E1182BE29A5D00C7FC93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDD3E11A2BE29A7300C7FC93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CDD3E11C2BE29BFA00C7FC93 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		CDD3E11E2BE29C0700C7FC93 /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOne.swift; sourceTree = "<group>"; };
 		E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
@@ -144,6 +152,8 @@
 				99FA149B2BE098D400E81761 /* GameSceneVM.swift */,
 				99FA149C2BE098D400E81761 /* ImagePredictor.swift */,
 				99FA149D2BE098D400E81761 /* Prediction.swift */,
+				CDD3E11C2BE29BFA00C7FC93 /* Player.swift */,
+				CDD3E11E2BE29C0700C7FC93 /* PlayerManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 		CD7369152BDB6B710011A573 /* SleuthVision */ = {
 			isa = PBXGroup;
 			children = (
+				CDD3E1172BE29A4500C7FC93 /* SupportingFiles */,
 				E4A76F572BDFDC9E007FAED5 /* Info.plist */,
 				E40E5F312BDBF7BA00EFBF6F /* Unused */,
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
@@ -216,13 +227,13 @@
 				99FA14D12BE0994500E81761 /* GameInstance.swift */,
 				E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */,
 				E4A76F552BDFD693007FAED5 /* CulpritPage.swift */,
+				99FA14A72BE098D400E81761 /* View */,
+				99FA14982BE098D400E81761 /* Model */,
 				99FA149F2BE098D400E81761 /* Controller */,
 				99FA14B42BE098D500E81761 /* CulpritClass.mlmodel */,
 				99FA14A62BE098D400E81761 /* MobileNet.mlmodel */,
-				99FA14982BE098D400E81761 /* Model */,
 				99FA14B32BE098D400E81761 /* MysteryObjectPrediction.mlmodel */,
 				99FA14972BE098D400E81761 /* ObjectPredictor.mlmodel */,
-				99FA14A72BE098D400E81761 /* View */,
 				99FA14B52BE098D600E81761 /* yolov9c.mlpackage */,
 				CD73691A2BDB6B7A0011A573 /* Assets.xcassets */,
 				CD73691C2BDB6B7A0011A573 /* Preview Content */,
@@ -253,6 +264,15 @@
 				CD7369332BDB6B7A0011A573 /* SleuthVisionUITestsLaunchTests.swift */,
 			);
 			path = SleuthVisionUITests;
+			sourceTree = "<group>";
+		};
+		CDD3E1172BE29A4500C7FC93 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CDD3E1182BE29A5D00C7FC93 /* AppDelegate.swift */,
+				CDD3E11A2BE29A7300C7FC93 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		E40E5F312BDBF7BA00EFBF6F /* Unused */ = {
@@ -408,6 +428,7 @@
 				99FA14B62BE098D600E81761 /* ObjectPredictor.mlmodel in Sources */,
 				99FA14C52BE098D600E81761 /* CulpritCaptureView.swift in Sources */,
 				99FA14C12BE098D600E81761 /* CameraViewExtension.swift in Sources */,
+				CDD3E11B2BE29A7300C7FC93 /* SceneDelegate.swift in Sources */,
 				E4A76F542BDF631D007FAED5 /* TutorialPage.swift in Sources */,
 				CD7369172BDB6B710011A573 /* SleuthVisionApp.swift in Sources */,
 				99FA14C32BE098D600E81761 /* MobileNet.mlmodel in Sources */,
@@ -415,6 +436,7 @@
 				99FA14CA2BE098D600E81761 /* CameraView.swift in Sources */,
 				99FA14B72BE098D600E81761 /* ImageRecognizer.swift in Sources */,
 				99FA14C92BE098D600E81761 /* Button.swift in Sources */,
+				CDD3E1192BE29A5D00C7FC93 /* AppDelegate.swift in Sources */,
 				E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */,
 				99FA14CB2BE098D600E81761 /* VideoDetectorView.swift in Sources */,
 				99FA14D02BE098D600E81761 /* yolov9c.mlpackage in Sources */,
@@ -429,8 +451,10 @@
 				99FA14D22BE0994500E81761 /* GameInstance.swift in Sources */,
 				99FA14CE2BE098D600E81761 /* MysteryObjectPrediction.mlmodel in Sources */,
 				99FA14C42BE098D600E81761 /* ObjectPredictView.swift in Sources */,
+				CDD3E11F2BE29C0700C7FC93 /* PlayerManager.swift in Sources */,
 				99FA14BB2BE098D600E81761 /* Prediction.swift in Sources */,
 				E4A76F562BDFD693007FAED5 /* CulpritPage.swift in Sources */,
+				CDD3E11D2BE29BFA00C7FC93 /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SleuthVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 749DSANFYP;
+				DEVELOPMENT_TEAM = M73B4W9D68;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SleuthVision/Info.plist;
@@ -629,7 +653,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SleuthVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 749DSANFYP;
+				DEVELOPMENT_TEAM = M73B4W9D68;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SleuthVision/Info.plist;

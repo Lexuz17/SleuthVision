@@ -12,7 +12,7 @@ struct ObjectScanView2: View {
     @StateObject var challengeOb = ChallengeObservable()
     @State var toObjectCapture = false
     @State var _class = ""
-
+    var room: String
     
     var body: some View {
         NavigationStack {
@@ -28,7 +28,7 @@ struct ObjectScanView2: View {
                 .padding() // Add padding to adjust spacing
                 
             }.navigationDestination(isPresented: $toObjectCapture) {
-                ObjectCaptureView(_class: _class)
+                ObjectCaptureView(_class: _class, room: room)
                     .navigationBarBackButtonHidden(true)
             }
         }

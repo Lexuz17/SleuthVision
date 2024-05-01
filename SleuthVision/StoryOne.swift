@@ -28,11 +28,11 @@ struct LocationPoint: View {
 
 struct StoryOne: View {
     @StateObject var gsvm = GameSceneVM(gameId: 0)
-	
-	@State private var isTutorialShown: Bool = true
-	
+    
+    @State private var isTutorialShown: Bool = true
+    
     @State private var location: CGPoint = CGPoint(x: 300, y: 200)
-
+    
     @State private var pantryOverlay: CGPoint = CGPoint(x: 350, y: 300)
     @State private var caveOverlay: CGPoint = CGPoint(x: 820, y: 320)
     
@@ -50,38 +50,38 @@ struct StoryOne: View {
                         Image("sitemap-brown")
                             .position(location)
                             .gesture(mapGesture)
-							.overlay {
-								if isTutorialShown {
-									Color.black.opacity(0.7).ignoresSafeArea()
-								}
-							}
+                            .overlay {
+                                if isTutorialShown {
+                                    Color.black.opacity(0.7).ignoresSafeArea()
+                                }
+                            }
                         LocationPoint(locOverlay: $pantryOverlay)
                             .onTapGesture {
                                 pantryIsClick = true
                             }
                             .navigationDestination(isPresented: $pantryIsClick) {
-                                ObjectScanView(challenge: LocationId.Pantry.rawValue).navigationBarBackButtonHidden(true)
-                        }
+                                ObjectScanView(challenge: LocationId.Pantry.rawValue, room: "pantry").navigationBarBackButtonHidden(true)
+                            }
                         
                         LocationPoint(locOverlay: $caveOverlay)
                             .onTapGesture {
                                 caveIsClick = true
                             }
                             .navigationDestination(isPresented: $caveIsClick) {
-                            ObjectScanView(challenge: LocationId.CaveRoom.rawValue).navigationBarBackButtonHidden(true)
-                        }
+                                ObjectScanView(challenge: LocationId.CaveRoom.rawValue, room: "cave").navigationBarBackButtonHidden(true)
+                            }
                         
-//                        Image("magnifying-glass-alt")
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 80)
-//                            .position(caveOverlay)
-//                            .scaleEffect(isCaveScaled ? 1.1 : 1.0)
-//                            .onAppear {
-//                                withAnimation(.easeInOut(duration: 0.8).repeatForever()) {
-//                                self.isCaveScaled.toggle()
-//                                }
-//                            }
+                        //                        Image("magnifying-glass-alt")
+                        //                            .resizable()
+                        //                            .aspectRatio(contentMode: .fit)
+                        //                            .frame(width: 80)
+                        //                            .position(caveOverlay)
+                        //                            .scaleEffect(isCaveScaled ? 1.1 : 1.0)
+                        //                            .onAppear {
+                        //                                withAnimation(.easeInOut(duration: 0.8).repeatForever()) {
+                        //                                self.isCaveScaled.toggle()
+                        //                                }
+                        //                            }
                     }
                 }
                 .overlay {
@@ -129,7 +129,7 @@ struct OverlayView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120)
                         .offset(x: 30)
-                    .shadow(radius: 10)
+                        .shadow(radius: 10)
                 }
             }
             Spacer()

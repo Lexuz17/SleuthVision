@@ -15,6 +15,7 @@ struct ObjectScanView: View {
     @StateObject var challengeOb = ChallengeObservable()
     @State var showImagePredictionView = false
     @State var _class = ""
+    var room: String
     
     var body: some View {
         ZStack() { // Align content to the top-left corner
@@ -26,6 +27,10 @@ struct ObjectScanView: View {
 					BackButtonView {
 						dismiss()
 					}
+                    .navigationDestination(isPresented: $showImagePredictionView) {
+                        ObjectCaptureView(_class: _class, room: room)
+                            .navigationBarBackButtonHidden(true)
+                    }
 					Spacer()
 					VStack(alignment: .trailing) {
 						ForEach(challengeOb.detectedItemsLabel.filter { $0.value }.keys.sorted(), id: \.self) { key in
@@ -35,12 +40,12 @@ struct ObjectScanView: View {
 					}
 				}
 				Spacer()
-				NavigationLink(
-					destination: ObjectCaptureView(_class: _class).navigationBarBackButtonHidden(true),
-					isActive: $showImagePredictionView,
-					label: {
-						EmptyView() // Use empty view as label
-					})
+//				NavigationLink(
+//					destination: ObjectCaptureView(_class: _class).navigationBarBackButtonHidden(true),
+//					isActive: $showImagePredictionView,
+//					label: {
+//						EmptyView() // Use empty view as label
+//					})
 				/*
 				VStack(alignment: .trailing) {
 					ForEach(challengeOb.detectedItemsLabel.filter { $0.value }.keys.sorted(), id: \.self) { key in
@@ -54,6 +59,7 @@ struct ObjectScanView: View {
     }
 }
 
-#Preview {
-	ObjectScanView(challenge: 0)
-}
+//
+//#Preview {
+//	ObjectScanView(challenge: 0)
+//}
