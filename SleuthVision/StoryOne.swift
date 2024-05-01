@@ -135,7 +135,7 @@ struct OverlayView: View {
                     Image("wanted-poster-alt")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120)
+                        .frame(width: 90)
                         .offset(x: 30)
                         .shadow(radius: 10)
                 }

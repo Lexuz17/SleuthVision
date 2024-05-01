@@ -53,7 +53,8 @@ struct ObjectScanView: View {
 				}
 				.padding() // Add padding to adjust spacing
 				 */
-			}
+                // on progress mskin ini..
+            }
         }
     }
 }

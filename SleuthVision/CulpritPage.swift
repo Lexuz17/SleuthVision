@@ -15,6 +15,8 @@ struct CulpritPage: View {
 				Image("story-background")
 					.resizable()
 					.ignoresSafeArea()
+                Image("culprit-frame")
+
 				VStack {
 					HStack {
 						Image("back-button-brown")
@@ -28,6 +30,7 @@ struct CulpritPage: View {
 						Spacer()
 					}
 					Spacer()
+                    
 					HStack {
 						Spacer()
 						NavigationLink (destination: CulpritCaptureView().navigationBarBackButtonHidden(true)) {

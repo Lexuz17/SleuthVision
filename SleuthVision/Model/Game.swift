@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Game {
-    let id : Int
-    let title : String
-    let story : [Story]
+class Game: Codable {
+    var id : Int
+    var title : String
+    var story : [Story]
     var challenges : [Challenge]
-    let culprit : Culprit
+    var culprit : Culprit
     var itemDictionary : [String: Item] = [:]
     
     init(id: Int, title: String, story: [Story], challenges: [Challenge], culprit: Culprit) {
@@ -92,7 +92,7 @@ class Game {
     }
 }
 
-struct Challenge : Identifiable, Hashable {
+struct Challenge : Identifiable, Hashable, Codable {
     var id: Int
     
     let location : Location
@@ -108,7 +108,7 @@ struct Challenge : Identifiable, Hashable {
     }
 }
 
-struct Item {
+struct Item: Codable {
     let label : String
     let hints : [String]
     let _class : String
@@ -119,17 +119,17 @@ struct Item {
 //    let images : String
 //}
 
-struct Location{
+struct Location: Codable{
     let id : Int
     let name : String
 }
 
-struct Story {
+struct Story:Codable {
     let image : String
     let description : String
 }
 
-struct Culprit {
+struct Culprit: Codable {
     //    let image : String
     let uuid : String
 }

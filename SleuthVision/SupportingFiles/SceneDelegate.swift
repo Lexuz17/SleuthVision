@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var gameSceneVM: GameSceneVM?
     
     func scene(_ scene: UIScene, willConnectTo
                session: UISceneSession, options
@@ -22,7 +23,9 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
-        print("Im Hiding")
+        print("Bye")
+        let selectedGame = GameSceneVM(gameId: 0).selectedGame
+        PlayerManager.shared.saveGame(selectedGame)
     }
     
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -30,12 +33,6 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-//        if let player = PlayerManager.shared.getPlayerNow() {
-//            PlayerManager.shared.savePlayer(player)
-//        }
-//        PlayerManager.shared.resetPlayer()
-        PlayerManager.shared.setPlayerNow(Player(name: "Yeji"))
-        print(PlayerManager.shared.getPlayerNow()?.name)
-        print("Bye")
+        print("Im Hiding")
     }
 }

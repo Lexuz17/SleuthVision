@@ -8,23 +8,32 @@
 import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        if let playerSafe = PlayerManager.shared.getPlayer(){
-            print(playerSafe.name)
-            PlayerManager.shared.setPlayerNow(playerSafe)
+        if let gameSafe = PlayerManager.shared.getGame(){
+//            PlayerManager.shared.resetGamesData()
+            GameSceneVM(gameId: 0).selectedGame.challenges = gameSafe.challenges
+            GameSceneVM(gameId: 0).selectedGame.culprit = gameSafe.culprit
+            GameSceneVM(gameId: 0).selectedGame.id = gameSafe.id
+            GameSceneVM(gameId: 0).selectedGame.story = gameSafe.story
+            GameSceneVM(gameId: 0).selectedGame.title = gameSafe.title
             print("Player terdaftar")
-//            PlayerManager.shared.resetPlayer()
         }
         else {
             print("Player tidak terdaftar")
-//            let newPlayer = Player(
-//                name: "Haerin",
-//                roomProgress: [1: .completed, 2: .inProgress, 3: .notStarted],
-//                completedTasksPerRoom: [1: 3, 2: 2],
-//                tasksDone: [1, 2, 3, 4, 5]
-//            )
-//            PlayerManager.shared.setPlayerNow(newPlayer)
+            let gameTitle = "Case I"
+            let scenes = [
+                Story(image: "sceneA.jpg", description: ""),
+                Story(image: "sceneB.jpg", description: "")
+            ]
+            let challenges = [
+                Challenge(id: 0, location: pantry, items: pantryItems, isDone: false),
+                Challenge(id: 1, location: caveRoom, items: caveRoomItems, isDone: false),
+            ]
+            let culprit = Culprit(uuid: "cff3e5c5-057d-11ef-86d3-0242ac120002")
+            let game0 = Game(id: 0, title: gameTitle, story: scenes, challenges: challenges, culprit: culprit)
+            
+            // Save game data
+            PlayerManager.shared.saveGame(game0)
         }
         return true
     }
