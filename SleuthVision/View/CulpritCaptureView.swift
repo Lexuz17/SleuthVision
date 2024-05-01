@@ -41,32 +41,37 @@ struct CulpritCaptureView: View {
                 }
             }.ignoresSafeArea(.all, edges: .all)
             
-			Image("culprit-capture")
+			Image("camera-capture")
 				.resizable()
 				.aspectRatio(contentMode: .fill)
-				.ignoresSafeArea()
+				.frame(width: 630)
+				.offset(x: 10, y: 10)
 			
             HStack {
 				VStack {
 					BackButtonView {
 						dismiss()
 					}
+					.frame(width: 50)
 					Spacer()
 				}
                 
                 Spacer()
                 
 				VStack {
+					/*
 					Image("culprit-photo")
 						.resizable()
 						.aspectRatio(contentMode: .fit)
 						.offset(x: 20, y: 20)
 						.frame(width: 150)
+					*/
+					Spacer()
 					CaptureButtonView(buttonImage: captureButtonImage) {
 						coordinator.vc.takePicture()
 						predictionState = .processed
 					}
-					.offset(x: 20)
+					.offset(x: 60)
 					Spacer()
 				}
             }
@@ -88,8 +93,8 @@ struct CulpritCaptureView: View {
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 					.frame(width: 200)
-					.foregroundStyle(Color.green)
-					.offset(x: -20, y: 30)
+					.foregroundStyle(Color.red)
+					.offset(x: -30, y: 40)
             }
         }
     }

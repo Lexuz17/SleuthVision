@@ -20,7 +20,7 @@ struct CulpritPage: View {
 						Image("back-button-brown")
 							.resizable()
 							.aspectRatio(contentMode: .fit)
-							.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+							.frame(width: 80)
 							.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 							.onTapGesture {
 								dismiss()
@@ -30,11 +30,13 @@ struct CulpritPage: View {
 					Spacer()
 					HStack {
 						Spacer()
-						Image("camera-alt")
-							.resizable()
-							.aspectRatio(contentMode: .fit)
-							.frame(width: 120)
-							.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+						NavigationLink (destination: CulpritCaptureView().navigationBarBackButtonHidden(true)) {
+							Image("camera-alt")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.frame(width: 120)
+								.shadow(radius: 10)
+						}
 					}
 					Spacer()
 				}
