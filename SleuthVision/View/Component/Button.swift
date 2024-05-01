@@ -24,7 +24,7 @@ struct BackButtonView: View {
     var action: () -> Void
     
     var body: some View {
-        ButtonView(width: 120, image: "back-button-brown") {
+        ButtonView(width: 80, image: "back-button-brown") {
          action()
         }
     }
