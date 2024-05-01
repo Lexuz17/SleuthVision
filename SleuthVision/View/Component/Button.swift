@@ -11,7 +11,7 @@ struct CaptureButtonView: View {
     var action: () -> Void
     
     var body: some View {
-        ButtonView(width: 120, image: "camera") {
+        ButtonView(width: 120, image: "magnifying-glass-alt") {
          action()
         }
     }

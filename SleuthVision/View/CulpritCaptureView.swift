@@ -39,7 +39,11 @@ struct CulpritCaptureView: View {
                 }
             }.ignoresSafeArea(.all, edges: .all)
             
-            
+			Image("culprit-capture")
+				.resizable()
+				.aspectRatio(contentMode: .fill)
+				.ignoresSafeArea()
+			
             HStack {
                 BackButtonView {
                     dismiss()
@@ -47,10 +51,15 @@ struct CulpritCaptureView: View {
                 
                 Spacer()
                 
-                CaptureButtonView {
-                    coordinator.vc.takePicture()
-                    predictionState = .processed
-                }
+				VStack {
+					Spacer() // INI DIGANTI FOTO CULPRIT
+					CaptureButtonView {
+						coordinator.vc.takePicture()
+						predictionState = .processed
+					}
+					.offset(x: 25)
+					Spacer()
+				}
             }
             
             switch predictionState {
@@ -65,4 +74,8 @@ struct CulpritCaptureView: View {
             }
         }
     }
+}
+
+#Preview {
+	CulpritCaptureView()
 }

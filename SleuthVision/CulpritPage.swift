@@ -30,12 +30,13 @@ struct CulpritPage: View {
 					Spacer()
 					HStack {
 						Spacer()
-						Image("camera")
+						Image("camera-alt")
 							.resizable()
 							.aspectRatio(contentMode: .fit)
 							.frame(width: 120)
 							.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 					}
+					Spacer()
 				}
 			}
 		}

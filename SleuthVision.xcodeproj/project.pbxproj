@@ -170,6 +170,7 @@
 				99FA14AB2BE098D400E81761 /* Component */,
 				99FA14AF2BE098D400E81761 /* CameraView.swift */,
 				99FA14B02BE098D400E81761 /* VideoDetectorView.swift */,
+				99FA14AD2BE098D400E81761 /* ObjectScanView.swift */,
 				99FA14B12BE098D400E81761 /* ObjectCaptureView.swift */,
 				99FA14B22BE098D400E81761 /* ObjectScanView2.swift */,
 			);
@@ -180,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				99FA14AC2BE098D400E81761 /* RectangleHint.swift */,
-				99FA14AD2BE098D400E81761 /* ObjectScanView.swift */,
 				99FA14AE2BE098D400E81761 /* Button.swift */,
 			);
 			path = Component;
@@ -210,12 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				E4A76F572BDFDC9E007FAED5 /* Info.plist */,
-				E40E5F312BDBF7BA00EFBF6F /* Testing Code */,
+				E40E5F312BDBF7BA00EFBF6F /* Unused */,
 				CD7369162BDB6B710011A573 /* SleuthVisionApp.swift */,
 				CD7369182BDB6B710011A573 /* ContentView.swift */,
 				99FA14D12BE0994500E81761 /* GameInstance.swift */,
-				E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */,
-				E4A76F532BDF631D007FAED5 /* TutorialPage.swift */,
 				E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */,
 				E4A76F552BDFD693007FAED5 /* CulpritPage.swift */,
 				99FA149F2BE098D400E81761 /* Controller */,
@@ -257,12 +255,14 @@
 			path = SleuthVisionUITests;
 			sourceTree = "<group>";
 		};
-		E40E5F312BDBF7BA00EFBF6F /* Testing Code */ = {
+		E40E5F312BDBF7BA00EFBF6F /* Unused */ = {
 			isa = PBXGroup;
 			children = (
+				E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */,
+				E4A76F532BDF631D007FAED5 /* TutorialPage.swift */,
 				E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */,
 			);
-			path = "Testing Code";
+			path = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SleuthVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V847CY3JM;
+				DEVELOPMENT_TEAM = 749DSANFYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SleuthVision/Info.plist;
@@ -629,7 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SleuthVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V847CY3JM;
+				DEVELOPMENT_TEAM = 749DSANFYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SleuthVision/Info.plist;

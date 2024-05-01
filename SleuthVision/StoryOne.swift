@@ -28,7 +28,9 @@ struct LocationPoint: View {
 
 struct StoryOne: View {
     @StateObject var gsvm = GameSceneVM(gameId: 0)
-    @State private var isTutorialShown = false
+	
+    @State private var isTutorialShown = true
+	
     @State private var location: CGPoint = CGPoint(x: 300, y: 200)
 
     @State private var pantryOverlay: CGPoint = CGPoint(x: 350, y: 300)
@@ -48,7 +50,11 @@ struct StoryOne: View {
                         Image("sitemap-brown")
                             .position(location)
                             .gesture(mapGesture)
-                        
+							.overlay {
+								if isTutorialShown {
+									Color.black.opacity(0.7).ignoresSafeArea()
+								}
+							}
                         LocationPoint(locOverlay: $pantryOverlay)
                             .onTapGesture {
                                 pantryIsClick = true
