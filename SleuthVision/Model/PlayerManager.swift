@@ -11,13 +11,18 @@ class PlayerManager: ObservableObject {
     static let shared = PlayerManager()
     private let userDefaults = UserDefaults.standard
     private let playerKey = "PlayerData"
-    var playerNow: Player?
+    @Published var playerNow: Player?
+    
+    init() {
+        self.playerNow = getPlayer()
+    }
     
     func savePlayer(_ player: Player) {
         do {
             let encoder = JSONEncoder()
             let encodedData = try encoder.encode(player)
             userDefaults.set(encodedData, forKey: playerKey)
+            self.playerNow = player
         } catch {
             print("Failed to save player data: \(error)")
         }
@@ -49,12 +54,45 @@ class PlayerManager: ObservableObject {
     }
     
     func resetPlayer(){
-        userDefaults.reset()
+        userDefaults.resetPlayer()
     }
+    
+    func resetGamesData(){
+        userDefaults.resetGameData()
+    }
+    
+    func saveGame(_ game: Game) {
+        do {
+            let encoder = JSONEncoder()
+            let encodedData = try encoder.encode(game)
+            userDefaults.set(encodedData, forKey: "GameData")
+        } catch {
+            print("Failed to save game data: \(error)")
+        }
+    }
+    
+    // Method to retrieve the Game object
+    func getGame() -> Game? {
+        if let savedData = userDefaults.data(forKey: "GameData") {
+            do {
+                let decoder = JSONDecoder()
+                let game = try decoder.decode(Game.self, from: savedData)
+                return game
+            } catch {
+                print("Failed to decode game data: \(error)")
+            }
+        }
+        return nil
+    }
+
 }
 
 extension UserDefaults{
-    func reset() {
+    func resetPlayer() {
         removeObject(forKey: "PlayerData")
+    }
+    
+    func resetGameData() {
+        removeObject(forKey: "GameData")
     }
 }

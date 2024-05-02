@@ -28,7 +28,7 @@ struct ObjectScanView2: View {
                 .padding() // Add padding to adjust spacing
                 
             }.navigationDestination(isPresented: $toObjectCapture) {
-                ObjectCaptureView(_class: _class, room: room)
+                ObjectCaptureView(_class: _class)
                     .navigationBarBackButtonHidden(true)
             }
         }

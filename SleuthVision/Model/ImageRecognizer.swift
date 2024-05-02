@@ -11,7 +11,7 @@ import SwiftUI
 
 class ImageRecognizer {
     let apiToken: String
-    let uuid = game0.culprit.uuid
+    let uuid = GameSceneVM(gameId: 0).selectedGame.culprit.uuid
     
     init(apiToken: String) {
         self.apiToken = apiToken

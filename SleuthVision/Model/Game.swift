@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Game {
-    let id : Int
-    let title : String
-    let story : [Story]
+class Game: Codable {
+    var id : Int
+    var title : String
+    var story : [Story]
     var challenges : [Challenge]
-    let culprit : Culprit
+    var culprit : Culprit
     var itemDictionary : [String: Item] = [:]
     
     init(id: Int, title: String, story: [Story], challenges: [Challenge], culprit: Culprit) {
@@ -58,7 +58,7 @@ class Game {
         }
         printAllItems()
     }
-
+    
     func printAllItems() {
         for challenge in challenges {
             print("Challenge Location: \(challenge.location.name)")
@@ -68,13 +68,36 @@ class Game {
             print("------")
         }
     }
+    
+    func UpdateChallenges() {
+        for index in challenges.indices {
+            let challenge = challenges[index]
+            var allItemsDone = true
+            
+            for item in challenge.items {
+                if !item.isDone {
+                    allItemsDone = false
+                    break
+                }
+            }
+            challenges[index].isDone = allItemsDone
+        }
+    }
+    
+    func printAllChallenges() {
+        print("All Challenges:")
+        for challenge in challenges {
+            print("ID: \(challenge.id), Location: \(challenge.location.name), isDone: \(challenge.isDone)")
+        }
+    }
 }
 
-struct Challenge : Identifiable, Hashable {
+struct Challenge : Identifiable, Hashable, Codable {
     var id: Int
     
     let location : Location
     var items : [Item]
+    var isDone : Bool
     
     static func == (lhs: Challenge, rhs: Challenge) -> Bool {
         lhs.id == rhs.id
@@ -85,7 +108,7 @@ struct Challenge : Identifiable, Hashable {
     }
 }
 
-struct Item {
+struct Item: Codable {
     let label : String
     let hints : [String]
     let _class : String
@@ -96,19 +119,18 @@ struct Item {
 //    let images : String
 //}
 
-struct Location{
+struct Location: Codable{
     let id : Int
     let name : String
-    var isDone: Bool
 }
 
-struct Story {
+struct Story:Codable {
     let image : String
     let description : String
 }
 
-struct Culprit {
-//    let image : String
+struct Culprit: Codable {
+    //    let image : String
     let uuid : String
 }
 
