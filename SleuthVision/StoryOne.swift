@@ -38,8 +38,8 @@ struct StoryOne: View {
     
     @State private var location: CGPoint = CGPoint(x: 300, y: 200)
     
-    @State private var pantryOverlay: CGPoint = CGPoint(x: 350, y: 300)
-    @State private var caveOverlay: CGPoint = CGPoint(x: 820, y: 320)
+    @State private var pantryOverlay: CGPoint = CGPoint(x: 320, y: 320)
+    @State private var caveOverlay: CGPoint = CGPoint(x: 800, y: 350)
     
     @State private var pantryIsClick = false;
     @State private var caveIsClick = false;
@@ -107,8 +107,8 @@ struct StoryOne: View {
                 newTouch.x += value.translation.width
                 newTouch.y += value.translation.height
                 self.location = newTouch
-                self.pantryOverlay = CGPoint(x: newTouch.x + 50, y: newTouch.y + 100)
-                self.caveOverlay = CGPoint(x: newTouch.x + 520, y: newTouch.y + 120)
+                self.pantryOverlay = CGPoint(x: newTouch.x + 20, y: newTouch.y + 120)
+                self.caveOverlay = CGPoint(x: newTouch.x + 500, y: newTouch.y + 150)
             }
             .updating($startTouch) { (value, startTouch, transaction) in
                 startTouch = startTouch ?? location

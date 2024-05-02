@@ -43,7 +43,7 @@ struct ButtonView: View {
             Image(image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: width)
+                .frame(width: 95)
                 
         }
         .padding(12)

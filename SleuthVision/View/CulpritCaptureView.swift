@@ -12,7 +12,7 @@ struct CulpritCaptureView: View {
     @StateObject private var coordinator: BridgingCoordinator
     @State private var predictionState: PredictionState = .notCaptured
 	
-	private var captureButtonImage: String = "camera-alt"
+	private var captureButtonImage: String = "capture-button"
     
     init() {
         let coordinator = BridgingCoordinator()
@@ -42,12 +42,12 @@ struct CulpritCaptureView: View {
             }.ignoresSafeArea(.all, edges: .all)
             
 			Image("camera-screen")
-//				.resizable()
+				.resizable()
 				.aspectRatio(contentMode: .fill)
 				.ignoresSafeArea()
 			
-            HStack {
-				VStack {
+            VStack {
+				HStack {
 					BackButtonView {
 						dismiss()
 					}
@@ -57,22 +57,22 @@ struct CulpritCaptureView: View {
                 
                 Spacer()
                 
-//				VStack {
-//					/*
-//					Image("culprit-photo")
-//						.resizable()
-//						.aspectRatio(contentMode: .fit)
-//						.offset(x: 20, y: 20)
-//						.frame(width: 150)
-//					*/
-//					Spacer()
-//					CaptureButtonView(buttonImage: captureButtonImage) {
-//						coordinator.vc.takePicture()
-//						predictionState = .processed
-//					}
-//					.offset(x: 60)
-//					Spacer()
-//				}
+				VStack {
+					HStack {
+						//					Image("culprit-photo")
+						//						.resizable()
+						//						.aspectRatio(contentMode: .fit)
+						//						.offset(x: 20, y: 20)
+						//						.frame(width: 150)
+						Spacer()
+						CaptureButtonView(buttonImage: captureButtonImage) {
+							coordinator.vc.takePicture()
+							predictionState = .processed
+						}
+						.offset(x: -105, y: -30)
+						//					Spacer()
+					}
+				}
             }
             
             switch predictionState {
