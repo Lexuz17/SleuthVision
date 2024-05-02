@@ -11,7 +11,6 @@ struct CulpritCaptureView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var coordinator: BridgingCoordinator
     @State private var predictionState: PredictionState = .notCaptured
-	
 	private var captureButtonImage: String = "capture-button"
     
     init() {
@@ -25,10 +24,11 @@ struct CulpritCaptureView: View {
                 
                 if let img = image {
                     
-                    ImageRecognizer(apiToken: "").recognizeImage(image: img) { result in
+                    ImageRecognizer(apiToken: "fc9e0e80567043e5a30ab4e5f54be74e").recognizeImage(image: img) { result in
                         switch result {
                         case .success(let prediction):
                             predictionState = .correct
+							game0.setGameComplete()
                             print("Recognition: \(prediction)")
                             // Handle successful prediction
                         case .failure(let error):

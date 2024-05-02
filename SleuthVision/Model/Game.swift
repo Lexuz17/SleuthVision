@@ -14,6 +14,7 @@ class Game: Codable {
     var challenges : [Challenge]
     var culprit : Culprit
     var itemDictionary : [String: Item] = [:]
+	private var gameIsComplete : Bool
     
     init(id: Int, title: String, story: [Story], challenges: [Challenge], culprit: Culprit) {
         self.id = id
@@ -21,7 +22,8 @@ class Game: Codable {
         self.story = story
         self.challenges = challenges
         self.culprit = culprit
-        
+		self.gameIsComplete = false
+		
         for chal in challenges {
             for item in chal.items {
                 itemDictionary[item.label] = item
@@ -103,6 +105,14 @@ class Game: Codable {
             print("ID: \(challenge.id), Location: \(challenge.location.name), isDone: \(challenge.isDone)")
         }
     }
+	
+	func setGameComplete() {
+		self.gameIsComplete = true
+	}
+	
+	func getGameCompletion() -> Bool {
+		return self.gameIsComplete
+	}
 }
 
 struct Challenge : Identifiable, Hashable, Codable {

@@ -15,7 +15,7 @@ class ImagePredictor {
         let defaultConfig = MLModelConfiguration()
 
         // Create an instance of the image classifier's wrapper class.
-        let imageClassifierWrapper = try? ObjectPredictor(configuration: defaultConfig)
+        let imageClassifierWrapper = try? NewObjectPredictor(configuration: defaultConfig)
 
         guard let imageClassifier = imageClassifierWrapper else {
             fatalError("App failed to create an image classifier model instance.")

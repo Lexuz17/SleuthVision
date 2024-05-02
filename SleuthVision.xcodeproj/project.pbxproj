@@ -48,6 +48,7 @@
 		E40E5F2A2BDB82F900EFBF6F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */; };
 		E40E5F302BDBE7D400EFBF6F /* StoryOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */; };
 		E40E5F352BDBF7FA00EFBF6F /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */; };
+		E40F76CE2BE335A0003513CE /* NewObjectPredictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E40F76CD2BE335A0003513CE /* NewObjectPredictor.mlmodel */; };
 		E4A76F542BDF631D007FAED5 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A76F532BDF631D007FAED5 /* TutorialPage.swift */; };
 		E4A76F562BDFD693007FAED5 /* CulpritPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A76F552BDFD693007FAED5 /* CulpritPage.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		E40E5F292BDB82F900EFBF6F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E40E5F2F2BDBE7D400EFBF6F /* StoryOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOne.swift; sourceTree = "<group>"; };
 		E40E5F342BDBF7FA00EFBF6F /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
+		E40F76CD2BE335A0003513CE /* NewObjectPredictor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NewObjectPredictor.mlmodel; sourceTree = "<group>"; };
 		E4A76F532BDF631D007FAED5 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
 		E4A76F552BDFD693007FAED5 /* CulpritPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulpritPage.swift; sourceTree = "<group>"; };
 		E4A76F572BDFDC9E007FAED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				99FA14A62BE098D400E81761 /* MobileNet.mlmodel */,
 				99FA14B32BE098D400E81761 /* MysteryObjectPrediction.mlmodel */,
 				99FA14972BE098D400E81761 /* ObjectPredictor.mlmodel */,
+				E40F76CD2BE335A0003513CE /* NewObjectPredictor.mlmodel */,
 				99FA14B52BE098D600E81761 /* yolov9c.mlpackage */,
 				CD73691A2BDB6B7A0011A573 /* Assets.xcassets */,
 				CD73691C2BDB6B7A0011A573 /* Preview Content */,
@@ -421,6 +424,7 @@
 				99FA14B82BE098D600E81761 /* Game.swift in Sources */,
 				99FA14CF2BE098D600E81761 /* CulpritClass.mlmodel in Sources */,
 				99FA14BF2BE098D600E81761 /* CameraViewController.swift in Sources */,
+				E40F76CE2BE335A0003513CE /* NewObjectPredictor.mlmodel in Sources */,
 				CD7369192BDB6B710011A573 /* ContentView.swift in Sources */,
 				99FA14BD2BE098D600E81761 /* VideoDetectorController.swift in Sources */,
 				99FA14C82BE098D600E81761 /* ObjectScanView.swift in Sources */,
