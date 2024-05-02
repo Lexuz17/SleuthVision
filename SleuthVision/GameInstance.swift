@@ -20,17 +20,17 @@ let scenes = [
 ]
 
 let challenges = [
-    Challenge(id: LocationId.CaveRoom.rawValue, location: pantry, items: pantryItems, isDone: false),
-    Challenge(id: LocationId.Pantry.rawValue, location: caveRoom, items: caveRoomItems, isDone: false),
+	Challenge(id: LocationId.CaveRoom.rawValue, location: caveRoom, items: caveRoomItems, isDone: false),
+	Challenge(id: LocationId.Pantry.rawValue, location: pantry, items: pantryItems, isDone: false)
 ]
 
-let caveRoom = Location(id: 0, name: "Cave Room")
+let caveRoom = Location(id: LocationId.CaveRoom.rawValue, name: "Cave Room")
 var caveRoomItems = [
     Item(label: "person", hints: ["🧢","😷","🧍🏻"], _class: "ber", isDone: false),
     Item(label: "book", hints: ["🍏", "📓", ""], _class: "laptop", isDone: false),
 ]
 
-let pantry = Location(id: 1, name: "Pantry")
+let pantry = Location(id: LocationId.Pantry.rawValue, name: "Pantry")
 var pantryItems = [
     Item(label: "cup", hints: ["⚙️", "☕️", ""], _class: "coffeeMachine", isDone: false),
     Item(label: "refrigerator", hints: ["↪", "🍜", "🟡"], _class: "cupNoodles", isDone: false),
@@ -39,7 +39,7 @@ var pantryItems = [
 
 let culprit = Culprit(uuid: "cff3e5c5-057d-11ef-86d3-0242ac120002")
 
-let game0 = Game(
+var game0 = Game(
     id: 0,
     title: gameTitle,
     story: scenes,
@@ -47,4 +47,4 @@ let game0 = Game(
     culprit: culprit
 )
 
-let games = [game0]
+var games = [game0]

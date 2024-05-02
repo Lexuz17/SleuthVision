@@ -15,14 +15,22 @@ struct CulpritPage: View {
 				Image("story-background")
 					.resizable()
 					.ignoresSafeArea()
-				Image("culprit-frame")
-					.resizable()
-					.frame(width: 275, height: 320)
-				Image(game0.getCulpritImageRepresentation())
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.frame(width: 200)
-				
+				ZStack {
+					Image("culprit-frame")
+						.resizable()
+						.frame(width: 275, height: 320)
+					Image(game0.getCulpritImageRepresentation())
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 200)
+					if game0.getGameCompletion() {
+						Image("handcuff")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 300)
+							.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+					}
+				}
 				VStack {
 					HStack {
 						Image("back-button-brown")
@@ -48,6 +56,23 @@ struct CulpritPage: View {
 						}
 					}
 					Spacer()
+					
+					if game0.getGameCompletion() {
+						HStack {
+							Image("reset-button")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.frame(width: 80)
+								.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+								.onTapGesture {
+									PlayerManager.shared.resetGamesData()
+									game0.resetGame()
+									dismiss()
+								}
+							Spacer()
+						}
+					}
+					
 				}
 			}
 		}

@@ -39,6 +39,23 @@ struct ObjectScanView: View {
 					}
 				}
 				Spacer()
+				ZStack {
+					Image("footer")
+						.resizable()
+						.ignoresSafeArea()
+						.aspectRatio(contentMode: .fit)
+					HStack {
+						ForEach(game0.challenges[challenge].items, id: \.label) { item in
+							
+							Image(item.isDone ? "\(item.label)-f" : "\(item.label)-s")
+								.offset(y: 10)
+								.padding(.horizontal, 12)
+						}
+						
+					}.onAppear {
+						print(challenge)
+					}
+				}
 //				NavigationLink(
 //					destination: ObjectCaptureView(_class: _class).navigationBarBackButtonHidden(true),
 //					isActive: $showImagePredictionView,
@@ -59,7 +76,7 @@ struct ObjectScanView: View {
     }
 }
 
-//
-//#Preview {
-//	ObjectScanView(challenge: 0)
-//}
+
+#Preview {
+	ObjectScanView(challenge: 0)
+}

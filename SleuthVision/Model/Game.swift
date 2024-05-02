@@ -113,6 +113,18 @@ class Game: Codable {
 	func getGameCompletion() -> Bool {
 		return self.gameIsComplete
 	}
+	
+	func resetGame() {
+		let newGame = Game(
+			id: 0,
+			title: gameTitle,
+			story: scenes,
+			challenges: challenges,
+			culprit: culprit
+		)
+		
+		game0 = newGame
+	}
 }
 
 struct Challenge : Identifiable, Hashable, Codable {

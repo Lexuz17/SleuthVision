@@ -14,6 +14,7 @@ struct LocationPoint: View {
     @Binding var locOverlay: CGPoint
     
     var challengeId : Int
+	
     var body: some View {
         if let challenge = gsvm.selectedGame.challenges.first(where: { $0.id == challengeId }){
             if challenge.isDone == false{
@@ -57,7 +58,7 @@ struct StoryOne: View {
                             .gesture(mapGesture)
                         
                         // Pantry
-                        LocationPoint(locOverlay: $pantryOverlay, challengeId: 0)
+						LocationPoint(locOverlay: $pantryOverlay, challengeId: LocationId.Pantry.rawValue)
                             .onTapGesture {
                                 pantryIsClick = true
                             }
@@ -66,7 +67,7 @@ struct StoryOne: View {
                             }
                         
                         // CaveRoom
-                        LocationPoint(locOverlay: $caveOverlay, challengeId: 1)
+						LocationPoint(locOverlay: $caveOverlay, challengeId: LocationId.CaveRoom.rawValue)
                             .onTapGesture {
                                 caveIsClick = true
                             }

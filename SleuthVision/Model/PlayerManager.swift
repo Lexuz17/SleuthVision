@@ -94,5 +94,19 @@ extension UserDefaults{
     
     func resetGameData() {
         removeObject(forKey: "GameData")
+		let gameTitle = "Case I"
+		let scenes = [
+			Story(image: "sceneA.jpg", description: ""),
+			Story(image: "sceneB.jpg", description: "")
+		]
+		let challenges = [
+			Challenge(id: LocationId.CaveRoom.rawValue, location: caveRoom, items: caveRoomItems, isDone: false),
+			Challenge(id: LocationId.Pantry.rawValue, location: pantry, items: pantryItems, isDone: false)
+		]
+		let culprit = Culprit(uuid: "cff3e5c5-057d-11ef-86d3-0242ac120002")
+		let game0 = Game(id: 0, title: gameTitle, story: scenes, challenges: challenges, culprit: culprit)
+		
+		// Save game data
+		PlayerManager.shared.saveGame(game0)
     }
 }

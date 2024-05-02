@@ -93,7 +93,7 @@ struct ObjectCaptureView: View {
 	}
 }
 
-//#Preview {
-//	ObjectCaptureView(_class: "coffeMachine")
-//}
+#Preview {
+	ObjectCaptureView(_class: "coffeMachine")
+}
 
