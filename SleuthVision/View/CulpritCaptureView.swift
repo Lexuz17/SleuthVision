@@ -44,8 +44,7 @@ struct CulpritCaptureView: View {
 			Image("camera-capture")
 				.resizable()
 				.aspectRatio(contentMode: .fill)
-				.frame(width: 630)
-				.offset(x: 10, y: 10)
+				.ignoresSafeArea()
 			
             HStack {
 				VStack {
@@ -87,7 +86,7 @@ struct CulpritCaptureView: View {
 					.aspectRatio(contentMode: .fit)
 					.frame(width: 200)
 					.foregroundStyle(Color.green)
-					.offset(x: -20, y: 30)
+					.offset(x: -30, y: 40)
             case .wrong:
 				Image(systemName: "x.circle")
 					.resizable()
