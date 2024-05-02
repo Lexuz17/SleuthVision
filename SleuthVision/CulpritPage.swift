@@ -9,16 +9,20 @@ import SwiftUI
 
 struct CulpritPage: View {
 	@Environment(\.dismiss) var dismiss
-    var body: some View {
+	var body: some View {
 		NavigationStack {
 			ZStack {
 				Image("story-background")
 					.resizable()
 					.ignoresSafeArea()
-                Image("culprit-frame")
+				Image("culprit-frame")
+					.resizable()
+					.frame(width: 275, height: 320)
+				Image(game0.getCulpritImageRepresentation())
 					.resizable()
 					.aspectRatio(contentMode: .fit)
-
+					.frame(width: 200)
+				
 				VStack {
 					HStack {
 						Image("back-button-brown")
@@ -32,7 +36,7 @@ struct CulpritPage: View {
 						Spacer()
 					}
 					Spacer()
-                    
+					
 					HStack {
 						Spacer()
 						NavigationLink (destination: CulpritCaptureView().navigationBarBackButtonHidden(true)) {
@@ -47,7 +51,7 @@ struct CulpritPage: View {
 				}
 			}
 		}
-    }
+	}
 }
 
 #Preview {

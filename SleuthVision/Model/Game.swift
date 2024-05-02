@@ -28,6 +28,19 @@ class Game: Codable {
             }
         }
     }
+	
+	func getCulpritImageRepresentation() -> String {
+		var counter = 0
+		
+		for challenge in challenges {
+			for item in challenge.items {
+				if item.isDone {
+					counter += 1
+				}
+			}
+		}
+		return "culprit\(counter)"
+	}
     
     func getItemList(locationId: Int) -> [String] {
         var itemList: [String] = []
