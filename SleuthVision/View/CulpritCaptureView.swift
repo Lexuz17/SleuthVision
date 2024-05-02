@@ -86,14 +86,14 @@ struct CulpritCaptureView: View {
 					.aspectRatio(contentMode: .fit)
 					.frame(width: 200)
 					.foregroundStyle(Color.green)
-					.offset(x: -30, y: 40)
+					.offset(x: -75, y: 70)
             case .wrong:
 				Image(systemName: "x.circle")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 					.frame(width: 200)
 					.foregroundStyle(Color.red)
-					.offset(x: -30, y: 40)
+					.offset(x: -75, y: 70)
             }
         }
     }
