@@ -16,6 +16,8 @@ struct CulpritPage: View {
 					.resizable()
 					.ignoresSafeArea()
                 Image("culprit-frame")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
 
 				VStack {
 					HStack {
