@@ -48,7 +48,7 @@ struct CameraView: UIViewControllerRepresentable {
 }
 
 
-//
+
 //struct BadCameraPreview: UIViewRepresentable {
 //    @ObservedObject var cameraCapture : CameraCaptureManager
 //
